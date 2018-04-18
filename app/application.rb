@@ -1,11 +1,17 @@
-require 'pry'
+
 
 class Application
 
 def call
   resp = Rack::Response.new
-  binding.pry
 
+  now = Time.now
+  if now > 12
+    resp.write "Good Afternoon"
+  else
+    resp.write "Good Morning"
+  end
+  resp.finish
 end
 
 end
