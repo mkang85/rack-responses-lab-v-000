@@ -2,7 +2,7 @@
 
 class Application
 
-def call
+def call(env)
   resp = Rack::Response.new
 
   now = Time.now
